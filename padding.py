@@ -1,9 +1,10 @@
 import os
 from PIL import Image, ImageOps
+import sys
 
-# 입력 및 출력 폴더 경로 설정
-input_folder = "kk"       # 원본 이미지 폴더
-output_folder = "kk_images"     # 패딩된 이미지 저장 폴더
+# input_folder와 output_folder를 main.py에서 넘겨받기
+input_folder = sys.argv[1]  # main.py에서 첫 번째 인자로 input_folder 전달
+output_folder = sys.argv[2]  # main.py에서 두 번째 인자로 output_folder 전달
 
 # 출력 폴더가 없으면 생성
 os.makedirs(output_folder, exist_ok=True)
@@ -29,4 +30,4 @@ for filename in os.listdir(input_folder):
         save_path = os.path.join(output_folder, filename)
         padded_img.save(save_path)
 
-print("✅ 모든 이미지에 패딩 완료!")
+#print("패딩 완료")
