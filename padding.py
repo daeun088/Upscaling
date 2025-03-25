@@ -33,4 +33,3 @@ for filename in os.listdir(input_folder):
 
         image_counter += 1
 
-print("패딩 및 리사이즈 완료!")
