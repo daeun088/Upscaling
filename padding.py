@@ -19,14 +19,15 @@ for filename in os.listdir(input_folder):
     if any(filename.lower().endswith(ext) for ext in valid_extensions):
         img_path = os.path.join(input_folder, filename)
         img = Image.open(img_path)
+        image_name = os.path.basename(img_path)
 
         fill_color = 255 if img.mode == 'L' else (255, 255, 255)
 
         padded_img = ImageOps.expand(img, padding, fill=fill_color)
 
-        resized_img = padded_img.resize((128, 128))
+        resized_img = padded_img.resize((256, 256))
 
-        save_filename = f"{image_counter:05d}.png"
+        save_filename = f"{image_name}"
         save_path = os.path.join(output_folder, save_filename)
 
         resized_img.save(save_path)

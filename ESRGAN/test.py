@@ -50,5 +50,5 @@ for path in glob.glob(test_img_folder):
     # 원래 크기로 다운샘플링
     output_resized = cv2.resize(output, (original_size[1], original_size[0]), interpolation=cv2.INTER_AREA)
 
-    output_path = osp.join(output_folder, f'{base}_restored.png')
+    output_path = osp.join(output_folder, f'{base}.png')
     cv2.imwrite(output_path, output_resized)
