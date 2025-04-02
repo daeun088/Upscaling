@@ -2,7 +2,7 @@ import subprocess
 import os
 import shutil
 
-input_folder = "input"
+input_folder = "../1-text-extractor/final"  # 텍스트 추출 후 저장된 폴더
 resize_folder = "resize"
 intermediate_folder = "intermediate"  # ESRGAN 1번 실행 후 저장
 output_folder = "output"
