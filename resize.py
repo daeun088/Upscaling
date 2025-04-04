@@ -4,11 +4,9 @@ import numpy as np
 from skimage.transform import rescale 
 import sys
 
-# input_folder와 output_folder를 main.py에서 넘겨받기
-input_folder = sys.argv[1]  # main.py에서 첫 번째 인자로 input_folder 전달
-output_folder = sys.argv[2]  # main.py에서 두 번째 인자로 output_folder 전달
+input_folder = sys.argv[1]  
+output_folder = sys.argv[2]  
 
-# 출력 폴더가 없으면 생성
 os.makedirs(output_folder, exist_ok=True)
 
 def resize_and_smooth(image_path, output_size=(256, 256), pad_color=255, blur_kernel=(5,5), blur_sigma=1.5):
